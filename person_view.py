@@ -12,6 +12,7 @@ class PersonaView:
         self.txt_apellido = "%sApellido: " % self.tab3
         self.txt_idpersona = "%sID de Persona: " % self.tab3
         self.txt_dni = "%sD.N.I de la persona: " % self.tab3
+        self.txt_genero = "%sGenero: " % self.tab3
         pass
 
     def mostrar_menu(self):
@@ -41,7 +42,8 @@ class PersonaView:
         nombre = input(self.txt_nombre)
         apellido = input(self.txt_apellido)
         dni = int(input(self.txt_dni))
-        return (nombre, apellido, dni)
+        genero = input(self.txt_genero)
+        return (nombre, apellido, dni, genero)
 
     def confirmar_creacion(self):
         """Vista de confirmación de creación de nueva persona"""

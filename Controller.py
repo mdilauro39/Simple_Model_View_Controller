@@ -2,8 +2,13 @@
 from person import Persona 
 from person_view import PersonaView
 from db_connection import DBConn
+# from tkinter import *
+# from tkinter import ttk
 
-class PersonaController:
+class PersonaController():
+
+    # root = Tk(PersonaController)
+    # frm = ttk.Frame(root, padding=10)
 
     def __init__(self):
         self.vista = PersonaView()
@@ -25,11 +30,12 @@ class PersonaController:
 
     def crear_persona_controller(self):
         """Controlador para creación de nueva persona"""
-        (persona_nombre, persona_apellido, persona_dni) = self.vista.crear_persona()
+        (persona_nombre, persona_apellido, persona_dni, persona_genero) = self.vista.crear_persona()
         persona = Persona()
         persona.nombre = persona_nombre
         persona.apellido = persona_apellido
         persona.dni = persona_dni
+        persona.genero = persona_genero
         persona.create()
         self.vista.confirmar_creacion()
         self.persona_controller()
@@ -70,6 +76,11 @@ class PersonaController:
         self.vista.confirmar_eliminar_persona()
         self.persona_controller()
 
+# frm.grid()
+# ttk.Label(frm, text="Crear Persona").grid(column=0, row=0)
+# ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
+# ttk.Button(frm, text="Ver Persona", command=listar_persona_controller()).grid(column=1, row=0)
 
 controller = PersonaController()
+#root.mainloop()
 

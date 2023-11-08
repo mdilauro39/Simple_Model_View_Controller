@@ -9,13 +9,14 @@ class Persona:
         self.nombre = ''
         self.apellido = ''
         self.dni = 0
+        self.genero = ''
         self.fecha_nacimiento = ''
         self.db = DBConn()
 
     def create(self):
         """Crear un nuevo registro"""
-        query = "INSERT INTO persona VALUES (null,?,?,?,'null','null')"
-        values = (self.nombre, self.apellido, self.dni)
+        query = "INSERT INTO persona VALUES (null,?,?,?,?,'null','null')"
+        values = (self.nombre, self.apellido, self.dni, self.genero)
         self.db.ejecutar(query, values)
 
     def update(self):
