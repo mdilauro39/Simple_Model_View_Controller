@@ -10,8 +10,17 @@
 #         self.etiqueta = tk.Label(self.root, text="etiqueta")
 #         self.etiqueta.pack()
 
+from tkinter import *
+from tkinter import ttk
 
-class PersonaView:
+class PersonaView():
+
+    Persona = Tk()
+    Persona.title = ("PersonaForm")
+    Persona.geometry=('1000 x 1000')
+    Persona.mainloop()
+    
+
 
     def __init__(self):
         self.tab1 = "    "

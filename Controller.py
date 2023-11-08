@@ -2,15 +2,18 @@
 from person import Persona 
 from person_view import PersonaView
 from db_connection import DBConn
-from tkinter import *
-import tkinter as tk
 
-class PersonaController(tk.Frame):
+
+
+
+class PersonaController():
+
+
 
     def __init__(self):
         self.vista = PersonaView()
         self.persona_controller()
-        self.root = Tk()
+        
         
         
     def persona_controller(self):
