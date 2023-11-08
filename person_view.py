@@ -1,5 +1,15 @@
 # -*- coding: utf-8 *-*
 
+# from tkinter import *
+
+# class Vista:
+#     def __init__(self, root):
+#         self.root = root
+#         self.root.title("")
+
+#         self.etiqueta = tk.Label(self.root, text="etiqueta")
+#         self.etiqueta.pack()
+
 
 class PersonaView:
 
@@ -11,7 +21,10 @@ class PersonaView:
         self.txt_nombre = "%sNombre: " % self.tab3
         self.txt_apellido = "%sApellido: " % self.tab3
         self.txt_idpersona = "%sID de Persona: " % self.tab3
-        self.txt_dni = "%sD.N.I de la persona: " % self.tab3
+        self.txt_dni = "%sD.N.I de la persona (sin puntos): " % self.tab3
+        self.txt_genero = "%sGenero: " % self.tab3
+       
+        
         pass
 
     def mostrar_menu(self):
@@ -41,7 +54,8 @@ class PersonaView:
         nombre = input(self.txt_nombre)
         apellido = input(self.txt_apellido)
         dni = int(input(self.txt_dni))
-        return (nombre, apellido, dni)
+        genero = input(self.txt_genero)
+        return (nombre, apellido, dni, genero)
 
     def confirmar_creacion(self):
         """Vista de confirmación de creación de nueva persona"""
@@ -61,7 +75,8 @@ class PersonaView:
             nombre = row[1]
             apellido = row[2]
             dni = row[3]
-            print("%s[%d] %s (%s) %s" % (self.tab3, idpersona, nombre, apellido, dni))
+            genero = row[4]
+            print("%s[%d] %s (%s) %s %s" % (self.tab3, idpersona, nombre, apellido, dni, genero))
 
     def editar_persona(self, listado):
         """Vista del formulario para editar un persona"""
@@ -73,7 +88,8 @@ class PersonaView:
         nombre = input(self.txt_nombre)
         apellido = input(self.txt_apellido)
         dni = input(self.txt_dni)
-        return (idpersona, nombre, apellido, dni)
+        genero = input(self.txt_genero)
+        return (idpersona, nombre, apellido, dni, genero)
 
     def confirmar_editar_persona(self):
         """Vista de confirmación de edición"""

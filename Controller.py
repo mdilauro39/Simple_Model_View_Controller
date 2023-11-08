@@ -2,12 +2,16 @@
 from person import Persona 
 from person_view import PersonaView
 from db_connection import DBConn
+from tkinter import *
+import tkinter as tk
 
-class PersonaController:
+class PersonaController(tk.Frame):
 
     def __init__(self):
         self.vista = PersonaView()
         self.persona_controller()
+        self.root = Tk()
+        
         
     def persona_controller(self):
         """Controlador general de persona"""
@@ -25,11 +29,12 @@ class PersonaController:
 
     def crear_persona_controller(self):
         """Controlador para creación de nueva persona"""
-        (persona_nombre, persona_apellido, persona_dni) = self.vista.crear_persona()
+        (persona_nombre, persona_apellido, persona_dni, persona_genero) = self.vista.crear_persona()
         persona = Persona()
         persona.nombre = persona_nombre
         persona.apellido = persona_apellido
         persona.dni = persona_dni
+        persona.genero = persona_genero
         persona.create()
         self.vista.confirmar_creacion()
         self.persona_controller()
@@ -49,12 +54,13 @@ class PersonaController:
     def editar_persona_controller(self):
         """Controlador para editar un persona"""
         listado = self.traer_persona()
-        (idpersona, nombre, apellido, dni) = self.vista.editar_persona(listado)
+        (idpersona, nombre, apellido, dni, genero) = self.vista.editar_persona(listado)
         persona = Persona()
         persona.idpersona = int(idpersona)
         persona.nombre = nombre
         persona.apellido = apellido
         persona.dni =int(dni)
+        persona.genero = genero
         persona.update()
         self.vista.confirmar_editar_persona()
         self.persona_controller()
