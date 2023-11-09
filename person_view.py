@@ -10,8 +10,8 @@
 #         self.etiqueta = tk.Label(self.root, text="etiqueta")
 #         self.etiqueta.pack()
 
-from tkinter import *
-from tkinter import ttk
+# from tkinter import *
+# from tkinter import ttk
 
 class PersonaView():
 
@@ -36,25 +36,25 @@ class PersonaView():
 
 
 
-    Persona = Tk()
-    Persona.title = ("PersonaForm")
-    Persona.geometry=('1000 x 1000')
-    ttk.Label(Persona, text="Menú del Gestor de Personas").grid(column=0, row=0)
-    ttk.Label(Persona, text=" (1) Crear una persona").grid(column=0, row=1)
-    ttk.Label(Persona, text=" (2) Ver listado de perso").grid(column=0, row=2)
-    ttk.Label(Persona, text=" (3) Editar una personas").grid(column=0, row=3)
-    ttk.Label(Persona, text=" (4) Eliminar una person").grid(column=0, row=4)
-    ttk.Label(Persona, text=" (0) Salir").grid(column=0, row=5)
-    entry = ttk.Entry()
-# Posicionarla en la ventana.
-    entry.place(x=25, y=150)
-    button = ttk.Button(Persona, 
-                        text ="ENVIAR",
-                        command="submit"
-                        )
+#     Persona = Tk()
+#     Persona.title = ("PersonaForm")
+#     Persona.geometry=('1000 x 1000')
+#     ttk.Label(Persona, text="Menú del Gestor de Personas").grid(column=0, row=0)
+#     ttk.Label(Persona, text=" (1) Crear una persona").grid(column=0, row=1)
+#     ttk.Label(Persona, text=" (2) Ver listado de perso").grid(column=0, row=2)
+#     ttk.Label(Persona, text=" (3) Editar una personas").grid(column=0, row=3)
+#     ttk.Label(Persona, text=" (4) Eliminar una person").grid(column=0, row=4)
+#     ttk.Label(Persona, text=" (0) Salir").grid(column=0, row=5)
+#     entry = ttk.Entry()
+# # Posicionarla en la ventana.
+#     entry.place(x=25, y=150)
+#     button = ttk.Button(Persona, 
+#                         text ="ENVIAR",
+#                         command="submit"
+#                         )
     
-    button.place(x=195, y=145)
-    Persona.mainloop()
+#     button.place(x=195, y=145)
+#     Persona.mainloop()
 
     def mostrar_menu(self):
         """Vista del menú de opciones"""
@@ -105,7 +105,8 @@ class PersonaView():
             apellido = row[2]
             dni = row[3]
             genero = row[4]
-            print("%s[%d] %s (%s) %s %s" % (self.tab3, idpersona, nombre, apellido, dni, genero))
+            print("%s[%s] %s (%s) %s %s" % (self.tab3, str(idpersona), nombre, apellido, str(dni), genero))
+
 
     def editar_persona(self, listado):
         """Vista del formulario para editar un persona"""
