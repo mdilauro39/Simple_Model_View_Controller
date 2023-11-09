@@ -83,4 +83,3 @@ class PersonaController():
 
 controller = PersonaController()
 #root.mainloop()
-
