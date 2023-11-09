@@ -15,10 +15,7 @@ from tkinter import ttk
 
 class PersonaView():
 
-    Persona = Tk()
-    Persona.title = ("PersonaForm")
-    Persona.geometry=('1000 x 1000')
-    Persona.mainloop()
+    
     
 
 
@@ -32,9 +29,32 @@ class PersonaView():
         self.txt_idpersona = "%sID de Persona: " % self.tab3
         self.txt_dni = "%sD.N.I de la persona (sin puntos): " % self.tab3
         self.txt_genero = "%sGenero: " % self.tab3
+        
        
         
         pass
+
+
+
+    Persona = Tk()
+    Persona.title = ("PersonaForm")
+    Persona.geometry=('1000 x 1000')
+    ttk.Label(Persona, text="Menú del Gestor de Personas").grid(column=0, row=0)
+    ttk.Label(Persona, text=" (1) Crear una persona").grid(column=0, row=1)
+    ttk.Label(Persona, text=" (2) Ver listado de perso").grid(column=0, row=2)
+    ttk.Label(Persona, text=" (3) Editar una personas").grid(column=0, row=3)
+    ttk.Label(Persona, text=" (4) Eliminar una person").grid(column=0, row=4)
+    ttk.Label(Persona, text=" (0) Salir").grid(column=0, row=5)
+    entry = ttk.Entry()
+# Posicionarla en la ventana.
+    entry.place(x=25, y=150)
+    button = ttk.Button(Persona, 
+                        text ="ENVIAR",
+                        command="submit"
+                        )
+    
+    button.place(x=195, y=145)
+    Persona.mainloop()
 
     def mostrar_menu(self):
         """Vista del menú de opciones"""
