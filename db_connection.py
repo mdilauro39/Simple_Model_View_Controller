@@ -22,7 +22,7 @@ class DBConn:
         self.cursor = self.dbconn.cursor()
 
     def crear_tabla(self):
-        self.cursor.execute("CREATE TABLE persona(idpersona INTEGER PRIMARY KEY AUTOINCREMENT,nombre TEXT, apellido TEXT,dni INTEGER,timestamp DATE DEFAULT (datetime('now','localtime')),desde TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);")
+        self.cursor.execute("CREATE TABLE persona(idpersona INTEGER PRIMARY KEY AUTOINCREMENT,nombre TEXT, apellido TEXT,dni INTEGER, genero TEXT, timestamp DATE DEFAULT (datetime('now','localtime')),desde TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);")
 
     def ejecutar_consulta(self, query, values=''):
         """Ejecutar una consulta"""
