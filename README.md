@@ -5,3 +5,7 @@ A simple CRUD system based on the MVC (model, view, controller) style of softwar
 
 
 ## instalacion
+
+## Ejecucion.
+Para ejecutar la interfaz grafica, ejecutar el archivo interfaz.py
+Para ejecutar el menu por cmd ejecutar el archivo controller
