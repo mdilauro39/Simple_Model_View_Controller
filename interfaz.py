@@ -106,7 +106,6 @@ menu_bar.add_cascade(label="Acciones", menu=acciones_menu)
 acciones_menu.add_command(label="Crear usuario", command=crear_vista_usuario)
 acciones_menu.add_command(label="Ver Listado", command=ver_listado)
 acciones_menu.add_command(label="Eliminar Persona", command=crear_vista_eliminar)
-acciones_menu.add_command(label="Editar Persona", command='')
 
 # Iniciar el bucle principal de la aplicación
 ventana.mainloop()
